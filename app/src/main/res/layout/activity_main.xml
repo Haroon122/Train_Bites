@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/top_img"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top_background" />
+
+    <TextView
+        android:id="@+id/CriteriaText"
+        android:layout_below="@+id/top_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Criteria"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green"
+        android:gravity="center"
+
+        >
+
+    </TextView>
+
+    <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/userButton"
+            android:textAllCaps="false"
+            android:text="Connect as User"
+            android:layout_marginTop="280dp"
+            android:layout_marginStart="18dp"
+            android:elevation="10dp"
+            android:background="@drawable/btn_back_for_main"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white">
+
+        </Button>
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/adminButton"
+            android:text="Connect as Chef"
+            android:textAllCaps="false"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="18dp"
+            android:elevation="10dp"
+            android:background="@drawable/btn_back_for_main"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white">
+
+        </Button>
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/riderButton"
+            android:text="connect as Rider"
+            android:textAllCaps="false"
+            android:layout_marginTop="480dp"
+            android:layout_marginStart="18dp"
+            android:elevation="10dp"
+            android:background="@drawable/btn_back_for_main"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white">
+
+        </Button>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/thingLottie"
+        android:layout_below="@+id/riderButton"
+        android:layout_width="300dp"
+        android:layout_height="270dp"
+        app:lottie_rawRes="@raw/thinking_man"
+        android:layout_marginStart="70dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true">
+
+    </com.airbnb.lottie.LottieAnimationView>
+
+
+
+
+
+</RelativeLayout>

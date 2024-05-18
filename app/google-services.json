@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765427578956",
+    "project_id": "train-bites-111df",
+    "storage_bucket": "train-bites-111df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765427578956:android:ea5193a9b7225190fa1ce9",
+        "android_client_info": {
+          "package_name": "com.example.trainbites"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765427578956-id5sq8b9k78ssjgedf1rer6ok43iphtu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKwg6X92fTzM-EZUAzOC4GxeBQ3khnjBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765427578956-id5sq8b9k78ssjgedf1rer6ok43iphtu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

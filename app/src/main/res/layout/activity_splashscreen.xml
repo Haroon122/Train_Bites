@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splashscreen">
+
+    <ImageView
+        android:id="@+id/top_img"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top_background" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottiefile"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:lottie_rawRes="@raw/food"
+        android:elevation="5dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        android:layout_marginTop="140dp"
+        >
+
+    </com.airbnb.lottie.LottieAnimationView>
+
+
+    <TextView
+        android:id="@+id/traintxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Train Bites"
+        android:textSize="40sp"
+        android:textColor="#028352"
+        android:layout_marginTop="450dp"
+        android:textStyle="bold"
+        android:gravity="center">
+
+    </TextView>
+
+
+    <ImageView
+        android:id="@+id/trainImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/train"
+        android:layout_marginTop="530dp"
+        >
+
+    </ImageView>
+
+</RelativeLayout>

@@ -20,6 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.trainbites.ChefFoodPanel.Chef_Bottom_Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -103,7 +104,7 @@ public class LoginActivityForChef extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
                                     Toast.makeText(LoginActivityForChef.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivityForChef.this, chooseChefActivity.class);
+                                    Intent intent = new Intent(LoginActivityForChef.this, Chef_Bottom_Activity.class);
                                     startActivity(intent);
                                     finish();
                                 }else {

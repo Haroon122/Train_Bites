@@ -20,6 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.trainbites.CustomerFoodPanel.Customer_Bottom_Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -101,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
                                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, chooseUserActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, Customer_Bottom_Activity.class);
                                     startActivity(intent);
                                     finish();
                                 }else {
@@ -134,6 +135,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        //forget password
         forgetTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

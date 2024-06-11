@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/customerHome"
+        android:icon="@drawable/customer_menu"
+        android:title="Home" />
+
+
+    <item
+        android:id="@+id/orderCustomer"
+        android:icon="@drawable/train_icon"
+        android:title="Order" />
+
+
+    <item
+        android:id="@+id/cart"
+        android:icon="@drawable/cart_icon"
+        android:title="Cart" />
+
+
+    <item
+        android:id="@+id/TrackOrderCustomer"
+        android:icon="@drawable/track_customer_icon"
+        android:title="Track Order" />
+
+    <item
+        android:id="@+id/Customerprofile"
+        android:icon="@drawable/customer_profile"
+        android:title="Profile" />
+</menu>

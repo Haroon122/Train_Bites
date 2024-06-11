@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        app:cardElevation="7dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/UploadDishnameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawableLeft="@drawable/dish"
+                android:drawablePadding="10dp"
+                android:text="Dish Name "
+                android:textSize="30sp"
+                android:textColor="@color/green"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="175dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/recyclerview_image_bg"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="163dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="6dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/loadingcircle">
+
+                    </ImageView>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:maxLines="3"
+                        android:textColor="@color/green"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="10dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/UploadDescriptionTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="3dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/green"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/UploadQuantitytxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:text="Quantity"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="3dp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/green"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="11dp">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="horizontal">
+
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="0dp"
+                            app:lottie_rawRes="@raw/wailet"
+                            app:lottie_loop="true"
+                            app:lottie_autoPlay="true">
+
+                        </com.airbnb.lottie.LottieAnimationView>
+
+
+                        <TextView
+                            android:id="@+id/UploadPriceTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Price"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="7dp">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

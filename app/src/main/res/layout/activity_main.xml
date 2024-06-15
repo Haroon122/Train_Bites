@@ -67,7 +67,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:id="@+id/riderButton"
-            android:text="connect as Rider"
+            android:text="Connect as Rider"
             android:textAllCaps="false"
             android:layout_marginTop="480dp"
             android:layout_marginStart="18dp"

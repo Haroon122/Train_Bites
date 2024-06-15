@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     alias(libs.plugins.androidApplication)
     id("com.google.gms.google-services")
@@ -62,4 +64,9 @@ dependencies {
     implementation ("com.google.android.material:material:1.3.0")
     implementation("com.karumi:dexter:6.2.3")
     implementation("com.squareup.picasso:picasso:2.8")
+    //implementation("com.cepheuen.elegant-number-button:lib:1.0.3")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    implementation ("androidx.navigation:navigation-compose:2.7.7-alpha10")
+
+
 }

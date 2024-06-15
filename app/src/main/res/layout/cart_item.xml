@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        app:cardElevation="7dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="175dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="2dp"
+                    android:background="@drawable/recyclerview_image_bg"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="163dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="6dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/loadingcircle">
+
+                    </ImageView>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/CartDishName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:maxLines="3"
+                        android:text="Dish Name"
+                        android:textColor="@color/green"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/green"
+                        android:layout_marginStart="10dp">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/UploadPriceTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Price"
+                            android:textSize="17sp"
+                            android:textColor="@color/dark_green"
+                            android:textStyle="bold"                            android:layout_marginStart="5dp"
+                            >
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Price"
+                            android:textSize="17sp"
+                            android:textColor="@color/green">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/dumytotalprice"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="pr"
+                            android:textSize="17sp"
+                            android:textColor="@color/dark_green">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/multiplyicon"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="x"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/dark_green">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/dumyitmNumber"
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:text="itm"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/dark_green">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/equalsign"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="="
+                            android:textSize="17sp"
+                            android:textColor="@color/dark_green">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/maintotal"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Tpr"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/dark_green">
+
+                        </TextView>
+
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="5dp"
+                        >
+
+                        <ImageButton
+                            android:id="@+id/additemBtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/plus_icon"
+                            android:background="@android:color/transparent"
+                            android:layout_marginTop="5dp"
+
+                            >
+
+                        </ImageButton>
+
+                        <TextView
+                            android:id="@+id/showitem"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:text="1"
+                            android:gravity="center"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/green"
+                            >
+
+                        </TextView>
+
+                        <ImageButton
+                            android:id="@+id/removeitemBtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/minus_icon"
+                            android:background="@android:color/transparent"
+                            android:layout_marginTop="5dp"
+                            >
+
+                        </ImageButton>
+
+                        
+                    </LinearLayout>
+
+
+                    
+
+                    
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/deleteitemBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete_icon"
+            android:layout_marginTop="138dp"
+            android:layout_marginStart="300dp"
+            android:background="@android:color/transparent">
+
+        </ImageButton>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

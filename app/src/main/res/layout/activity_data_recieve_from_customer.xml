@@ -15,93 +15,139 @@
         android:scaleType="fitXY"
         android:src="@drawable/top_background" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imgcard"
+        android:layout_below="@id/top_img"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+        <ImageView
+            android:id="@+id/loadImageforOrder"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:paddingHorizontal="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loadingcircle">
+        </ImageView>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dishcard"
+        android:layout_below="@id/imgcard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp">
+        android:layout_height="80dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviiew"
+
+        <TextView
+            android:id="@+id/Cartdishname"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Dish Name"
+            android:textSize="35sp"
+            android:textColor="@color/green"
+            android:textStyle="bold">
+        </TextView>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemcard"
+        android:layout_below="@id/dishcard"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/descriptiontxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            app:cardCornerRadius="15dp"
-            android:elevation="10dp"
-            app:cardElevation="7dp">
+            android:layout_marginTop="10dp"
+            android:text="Discription"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/green">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/Cartiscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:text="discription"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green">
+        </TextView>
 
 
-            <ImageView
-                android:id="@+id/loadImageforOrder"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:paddingHorizontal="40dp"
-                android:layout_marginStart="60dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/loadingcircle">
+        <TextView
+            android:id="@+id/Pricetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:text="Price"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/green">
 
-            </ImageView>
+        </TextView>
 
-            <TextView
-                android:id="@+id/nametxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dish Name"
-                android:textSize="30sp"
-                android:layout_marginTop="230dp"
-                android:layout_marginStart="30sp"
-                android:textColor="@color/green"
-                android:textStyle="bold">
-
-            </TextView>
-
-
-            <TextView
-                android:id="@+id/orderdishname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dish Name"
-                android:textSize="20sp"
-                android:layout_marginTop="270dp"
-                android:layout_marginStart="30sp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/Pricetxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Price"
-                android:layout_marginTop="300dp"
-                android:layout_marginStart="30dp"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="@color/dark_green">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/OrderPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Price"
-                android:layout_marginTop="340dp"
-                android:layout_marginStart="30dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black">
-
-            </TextView>
-
-        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/CartPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="115dp"
+            android:text="Price"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green">
+        </TextView>
 
 
-    </FrameLayout>
+
+        <Button
+            android:id="@+id/cartBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:textSize="25sp"
+            android:background="@drawable/btn_background"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="180dp"
+            android:elevation="5dp">
+
+        </Button>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
 
 </RelativeLayout>

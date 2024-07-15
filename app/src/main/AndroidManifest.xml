@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -17,17 +19,30 @@
         android:theme="@style/Theme.TrainBites"
         tools:targetApi="31">
         <activity
+            android:name=".ChefFoodPanel.ChefUpdateItemsActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerFoodPanel.ConfirmOrderForSingleScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerFoodPanel.ConfirmOrderScreen"
+            android:exported="false" />
+        <activity
             android:name=".CustomerFoodPanel.DataRecieveFromCustomerActivity"
             android:exported="false" />
         <activity
             android:name=".DeliveryFoodPanel.Delivery_Bottom_Activity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".CustomerFoodPanel.Customer_Bottom_Activity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".ChefFoodPanel.Chef_Bottom_Activity"
-            android:exported="false" /> <!-- Splashscreen Activity (Launcher) -->
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
         <activity
             android:name=".Splashscreen"
             android:exported="true">

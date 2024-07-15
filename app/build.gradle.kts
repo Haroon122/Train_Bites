@@ -67,6 +67,8 @@ dependencies {
     //implementation("com.cepheuen.elegant-number-button:lib:1.0.3")
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
     implementation ("androidx.navigation:navigation-compose:2.7.7-alpha10")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("com.vanniktech:android-image-cropper:4.5.0")
 
 
 }

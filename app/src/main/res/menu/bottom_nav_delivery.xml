@@ -11,4 +11,9 @@
         android:icon="@drawable/baseline_local_shipping_24"
         android:title="Ship Orders" />
 
+    <item
+        android:id="@+id/ridersProfile"
+        android:title="Profile"
+        android:icon="@drawable/customer_profile"/>
+
 </menu>

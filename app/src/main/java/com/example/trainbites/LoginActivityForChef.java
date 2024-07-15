@@ -5,11 +5,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivityForChef extends AppCompatActivity {
 
     Button siginForChef,loginBUTTONchef;
+    ImageButton eyeBtn;
     EditText emailchef,passwordchef;
     String emailpatternchef="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     CheckBox cBoxChef;
@@ -38,6 +42,8 @@ public class LoginActivityForChef extends AppCompatActivity {
     FirebaseUser m1User;
     ProgressDialog progressDialogChef;
     SharedPreferences spChef;
+    private boolean isPasswordVisible=false;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,6 +58,7 @@ public class LoginActivityForChef extends AppCompatActivity {
         emailchef=findViewById(R.id.enter_emailChef);
         passwordchef=findViewById(R.id.enter_paswordChef);
         loginBUTTONchef=findViewById(R.id.loginBTnChef);
+        eyeBtn=findViewById(R.id.eyeToggleBtn);
         m1Auth=FirebaseAuth.getInstance();
         m1User=m1Auth.getCurrentUser();
         progressDialogChef=new ProgressDialog(this);
@@ -65,6 +72,24 @@ public class LoginActivityForChef extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        });
+
+        //eye toggle button working
+        eyeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPasswordVisible){
+                    passwordchef.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.hide);// Set to closed eye icon
+                }else {
+                    passwordchef.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.show);// Set to open eye icon
+                }
+                 isPasswordVisible =! isPasswordVisible;
+                // Move cursor to the end of the text
+                passwordchef.setSelection(passwordchef.length());
+            }
+
         });
 
 

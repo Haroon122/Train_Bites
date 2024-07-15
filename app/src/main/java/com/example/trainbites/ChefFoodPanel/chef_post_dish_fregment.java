@@ -51,7 +51,7 @@ public class chef_post_dish_fregment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_chef_post_dish_fregment, container, false);
+        View view = inflater.inflate(R.layout.fragment_chef_post_dish_fregment, container, false);
 
         // Initialize the views
         database = FirebaseDatabase.getInstance();
@@ -64,11 +64,13 @@ public class chef_post_dish_fregment extends Fragment {
         PostItem = view.findViewById(R.id.postdishButton);
         PostImage = view.findViewById(R.id.cameraButton);
 
+
         //dialog box
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Please wait...");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setTitle("Uploading");
+
 
         // Post item click listener
         PostItem.setOnClickListener(new View.OnClickListener() {
@@ -203,8 +205,6 @@ public class chef_post_dish_fregment extends Fragment {
             ViewImage.setImageURI(ImageUri);
         }
     }
-
-
 
 
 }

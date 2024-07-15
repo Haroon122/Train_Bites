@@ -30,6 +30,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     public interface CartAdapterListener {
         void onCartUpdated();
+
     }
 
     public CartAdapter(ArrayList<CartItemModel> list, Context context, CartAdapterListener listener) {

@@ -3,6 +3,7 @@ package com.example.trainbites.CustomerFoodPanel;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -13,11 +14,15 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.trainbites.R;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Customer_Bottom_Activity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    //BadgeDrawable badge;
     ViewPager2 viewPager2;
 
     @SuppressLint("MissingInflatedId")
@@ -29,6 +34,14 @@ public class Customer_Bottom_Activity extends AppCompatActivity {
 
         bottomNavigationView=findViewById(R.id.BottomNavigationBarCustomer);
         viewPager2=findViewById(R.id.viewpagerCustomer);
+
+
+        /*
+        // Initialize badge for cart menu item
+        badge=bottomNavigationView.getOrCreateBadge(R.id.cart);
+        badge.setVisible(false);
+        badge.setNumber(0);*/
+
 
         FragementAdapter adapter=new FragementAdapter(this);
         viewPager2.setAdapter(adapter);
@@ -103,5 +116,17 @@ public class Customer_Bottom_Activity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+    /*
+    // Method to update badge count
+    public void updateBadgeCount(int count){
+        if (count>0){
+            badge.setVisible(true);
+            badge.setNumber(count);
+        }else {
+            badge.setVisible(false);
+        }
+    }*/
+
 
 }

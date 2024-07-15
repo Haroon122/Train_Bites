@@ -1,6 +1,9 @@
 package com.example.trainbites.CustomerFoodPanel;
 
-public class CartItemModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class CartItemModel implements Parcelable {
     private String dishName;
     private String price;
     private String imageUrl;
@@ -9,21 +12,36 @@ public class CartItemModel {
 
     // Default constructor required for Firebase
     public CartItemModel() {
-        // Initialize quantity with 1
         this.quantity = 1;
     }
 
-    // Constructor with descriptive parameter names
     public CartItemModel(String dishName, String price, String imageUrl, String key) {
         this.dishName = dishName;
         this.price = price;
         this.imageUrl = imageUrl;
         this.key = key;
-        // Initialize quantity with 1
         this.quantity = 1;
     }
 
-    // Getters and Setters for all fields
+    protected CartItemModel(Parcel in) {
+        dishName = in.readString();
+        price = in.readString();
+        imageUrl = in.readString();
+        key = in.readString();
+        quantity = in.readInt();
+    }
+
+    public static final Creator<CartItemModel> CREATOR = new Creator<CartItemModel>() {
+        @Override
+        public CartItemModel createFromParcel(Parcel in) {
+            return new CartItemModel(in);
+        }
+
+        @Override
+        public CartItemModel[] newArray(int size) {
+            return new CartItemModel[size];
+        }
+    };
 
     public String getDishName() {
         return dishName;
@@ -71,5 +89,19 @@ public class CartItemModel {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(dishName);
+        dest.writeString(price);
+        dest.writeString(imageUrl);
+        dest.writeString(key);
+        dest.writeInt(quantity);
     }
 }

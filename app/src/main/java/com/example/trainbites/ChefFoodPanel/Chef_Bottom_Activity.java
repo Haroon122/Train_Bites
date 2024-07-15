@@ -47,6 +47,10 @@ public class Chef_Bottom_Activity extends AppCompatActivity {
                 } else if (itmId==R.id.chefProfile) {
                     viewPager2.setCurrentItem(3);
                     return true;
+                } else if (itmId==R.id.ChefprofileID) {
+                    viewPager2.setCurrentItem(4);
+                    return true;
+
                 }
                 return false;
 
@@ -73,6 +77,9 @@ public class Chef_Bottom_Activity extends AppCompatActivity {
                     case 3:
                         bottomNavigationView.setSelectedItemId(R.id.chefProfile);
 
+                        break;
+                    case 4:
+                        bottomNavigationView.setSelectedItemId(R.id.ChefprofileID);
                         break;
                 }
             }

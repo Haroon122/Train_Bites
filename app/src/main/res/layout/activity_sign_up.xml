@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -29,25 +30,23 @@
         >
     </TextView>
 
-    <LinearLayout
-        android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="630dp"
-        android:layout_marginTop="150dp"
-        android:orientation="vertical">
+
 
 
         <ImageView
             android:id="@+id/signupImage"
+            android:layout_marginTop="150dp"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:src="@drawable/signup"
-            android:layout_gravity="center">
+            android:layout_centerHorizontal="true"
+            >
 
         </ImageView>
 
         <TextView
             android:id="@+id/username"
+            android:layout_below="@id/signupImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="User Name"
@@ -129,6 +128,7 @@
             android:padding="10dp"
             android:ems="10"
             android:inputType="phone"
+            android:maxLength="11"
             android:drawableLeft="@drawable/phone_icon"
             android:background="@drawable/edittext_background"
             />
@@ -148,6 +148,7 @@
             >
         </TextView>
 
+
         <EditText
             android:id="@+id/edit_paswordUser"
             android:layout_width="match_parent"
@@ -161,11 +162,24 @@
             android:ems="10"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
+
+    <ImageButton
+        android:id="@+id/eyeToggleBtn"
+        android:layout_below="@id/pasword"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hide"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="320dp">
+
+    </ImageButton>
+
 
         <Button
             android:id="@+id/signupBTnUser"
-            android:layout_below="@+id/edit_pasword"
+            android:layout_below="@+id/edit_paswordUser"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:text="Sign Up"
@@ -183,6 +197,7 @@
 
         <TextView
             android:id="@+id/alreadyTxtForUser"
+            android:layout_below="@+id/signupBTnUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Already have an Account?"
@@ -196,11 +211,6 @@
 
 
 
-
-
-
-
-    </LinearLayout>
 
 
 

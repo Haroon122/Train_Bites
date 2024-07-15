@@ -23,6 +23,8 @@ public class FragementAdapter extends FragmentStateAdapter{
                 return new DeliveryPendingFregment();
             case 1:
                 return new DeliveryTrackOrderFregment();
+            case 2:
+                return new Rider_profile_fregment();
             default:
                 return new chef_Home_Fregment();
         }
@@ -30,6 +32,6 @@ public class FragementAdapter extends FragmentStateAdapter{
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

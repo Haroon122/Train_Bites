@@ -3,9 +3,11 @@ package com.example.trainbites;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUpActivityForRider extends AppCompatActivity {
 
     EditText usernameRider,emailRider,phoneRider,passwordRider;
+    ImageButton eyeBtn;
     Button signUpChef;
     TextView AlreadyAccountRider;
     FirebaseAuth m2Auth;
@@ -35,6 +38,8 @@ public class SignUpActivityForRider extends AppCompatActivity {
     ProgressDialog progressDialogRider;
 
     String emailpatternRider="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+    private boolean isPasswordVisible=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class SignUpActivityForRider extends AppCompatActivity {
         emailRider=findViewById(R.id.edit_emailRider);
         phoneRider=findViewById(R.id.edit_phoneRider);
         passwordRider=findViewById(R.id.edit_paswordRider);
+        eyeBtn=findViewById(R.id.eyeToggleBtn);
         AlreadyAccountRider=findViewById(R.id.alreadyTxtForRider);
         AlreadyAccountRider.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +67,23 @@ public class SignUpActivityForRider extends AppCompatActivity {
         progressDialogRider=new ProgressDialog(this);
         //Button working
         signUpChef=findViewById(R.id.signupBTnRider);
+
+
+        //eye toggle button working
+        eyeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isPasswordVisible){
+                    passwordRider.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.hide);
+                }else {
+                    passwordRider.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.show);
+                }
+                isPasswordVisible =! isPasswordVisible;
+                passwordRider.setSelection(passwordRider.length());
+            }
+        });
         signUpChef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +131,7 @@ public class SignUpActivityForRider extends AppCompatActivity {
                                 //for store data in firebase database
                                 // Inside onComplete() method after registration is successful
                                 String userId = m2Auth.getCurrentUser().getUid();
-                                Rider userData = new Rider (UCname,uCemail,uCphone);
+                                Rider userData = new Rider (UCname,uCemail,uCphone,uCpassword);
                                 db2Refrence.child("Rider").child(userId).setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

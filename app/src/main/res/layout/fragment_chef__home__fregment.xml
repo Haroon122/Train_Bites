@@ -6,15 +6,19 @@
     tools:context=".ChefFoodPanel.chef_Home_Fregment">
 
 
-    <TextView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:textAlignment="center">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
 
-    </TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ChefrecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>

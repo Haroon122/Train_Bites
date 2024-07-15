@@ -2,18 +2,27 @@ package com.example.trainbites.ChefFoodPanel;
 
 public class chefProjectModel {
 
-    private String DishName, Description, Quantity, Price;
-    private String PostImage;
+    private String key; // Unique key for each item
+    private String DishName, Description, Quantity, Price, PostImage;
 
     public chefProjectModel() {
     }
 
-    public chefProjectModel(String dishName, String description, String quantity, String price, String postImage) {
+    public chefProjectModel(String key, String dishName, String description, String quantity, String price, String postImage) {
+        this.key = key;
         DishName = dishName;
         Description = description;
         Quantity = quantity;
         Price = price;
         PostImage = postImage;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getDishName() {

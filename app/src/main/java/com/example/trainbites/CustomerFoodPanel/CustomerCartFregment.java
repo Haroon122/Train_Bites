@@ -1,12 +1,14 @@
 package com.example.trainbites.CustomerFoodPanel;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ import java.util.ArrayList;
 public class CustomerCartFregment extends Fragment implements CartAdapter.CartAdapterListener {
 
     private RecyclerView recyclerView;
+    private Button confirmorderbtn;
     private ArrayList<CartItemModel> recycleList;
     private FirebaseDatabase firebaseDatabase;
     private CartAdapter recyclerAdapter;
@@ -41,6 +44,23 @@ public class CustomerCartFregment extends Fragment implements CartAdapter.CartAd
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_cart_fregment, container, false);
+
+        confirmorderbtn=view.findViewById(R.id.confirmorderbtn);
+        confirmorderbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double totalAmount=calculateGrandTotal();
+                Intent intent=new Intent(getActivity(),ConfirmOrderScreen.class);
+                //this intent for move multiple cart items to next activity
+                intent.putParcelableArrayListExtra("cartItems", recycleList);
+                //this intent for move single amount move in next activity
+                intent.putExtra("Total Amount",totalAmount);
+                startActivity(intent);
+            }
+
+
+        });
+
 
         recyclerView = view.findViewById(R.id.CartrecyclerView);
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
@@ -81,6 +101,7 @@ public class CustomerCartFregment extends Fragment implements CartAdapter.CartAd
                 recyclerAdapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
                 updateGrandTotal();
+
             }
 
             @Override
@@ -105,6 +126,16 @@ public class CustomerCartFregment extends Fragment implements CartAdapter.CartAd
 
         DecimalFormat decimalFormat = new DecimalFormat("0.##");
         grandTotal.setText(decimalFormat.format(total));
+    }
+
+
+    //this show in next confirm order screen activity
+    private double calculateGrandTotal() {
+        double total = 0;
+        for (CartItemModel item : recycleList) {
+            total += item.getPriceAsDouble() * item.getQuantity();
+        }
+        return total;
     }
 
 }

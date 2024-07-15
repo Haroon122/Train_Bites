@@ -1,11 +1,14 @@
 package com.example.trainbites;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUpActivityForChef extends AppCompatActivity {
 
     EditText usernameChef,emailChef,phoneChef,passwordChef;
+    ImageButton eyeBtn;
     Button signUpChef;
     TextView AlreadyAccountChef;
     FirebaseAuth m1Auth;
@@ -36,7 +40,10 @@ public class SignUpActivityForChef extends AppCompatActivity {
 
     String emailpatternChef="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
+    private boolean isPasswordVisible=false;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,7 @@ public class SignUpActivityForChef extends AppCompatActivity {
         phoneChef=findViewById(R.id.edit_phoneChef);
         passwordChef=findViewById(R.id.edit_paswordChef);
         AlreadyAccountChef=findViewById(R.id.alreadyTxtForChef);
+        eyeBtn=findViewById(R.id.eyeToggleBtn);
         AlreadyAccountChef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +70,24 @@ public class SignUpActivityForChef extends AppCompatActivity {
         progressDialogChef=new ProgressDialog(this);
         //Button working
         signUpChef=findViewById(R.id.signupBTnChef);
+
+
+
+        //eye toggle button working
+        eyeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isPasswordVisible){
+                    passwordChef.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.hide);
+                }else {
+                    passwordChef.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.show);
+                }
+                isPasswordVisible =! isPasswordVisible;
+                passwordChef.setSelection(passwordChef.length());
+            }
+        });
         signUpChef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +135,7 @@ public class SignUpActivityForChef extends AppCompatActivity {
                                 //for store data in firebase database
                                 // Inside onComplete() method after registration is successful
                                 String userId = m1Auth.getCurrentUser().getUid();
-                                Chef userData = new Chef(UCname,uCemail,uCphone);
+                                Chef userData = new Chef(UCname,uCemail,uCphone,uCpassword);
                                 db1Refrence.child("Chef").child(userId).setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

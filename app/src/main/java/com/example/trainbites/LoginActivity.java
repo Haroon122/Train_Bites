@@ -5,11 +5,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     Button signUpForUser,loginBtn;
+    ImageButton eyeBtn;
     EditText email,password;
     String emailpattern="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     CheckBox cBox;
@@ -37,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseUser mUser;
     ProgressDialog progressDialog;
     SharedPreferences sp;
+
+    private boolean isPasswordVisible=false;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,9 +57,28 @@ public class LoginActivity extends AppCompatActivity {
         password=findViewById(R.id.enter_pasword);
         loginBtn=findViewById(R.id.loginBTn);
         signUpForUser=findViewById(R.id.signupBTnUser);
+        eyeBtn=findViewById(R.id.eyeToggleBtn);
         mAuth=FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
         progressDialog=new ProgressDialog(this);
+
+
+        //eye toggle button working
+        eyeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPasswordVisible){
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.hide);// Set to closed eye icon
+                }else {
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    eyeBtn.setImageResource(R.drawable.show);// Set to open eye icon
+                }
+                isPasswordVisible = !isPasswordVisible;
+                // Move cursor to the end of the text
+                password.setSelection(password.length());
+            }
+        });
 
         //signup Button
         signUpForUser.setOnClickListener(new View.OnClickListener() {

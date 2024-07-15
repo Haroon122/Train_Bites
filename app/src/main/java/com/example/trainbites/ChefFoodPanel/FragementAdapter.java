@@ -22,6 +22,8 @@ public class FragementAdapter extends FragmentStateAdapter{
                 return new cehf_order_fregmant();
             case 3:
                 return new chef_post_dish_fregment();
+            case 4:
+                return new Chef_profileID_fregment();
             default:
                 return new chef_Home_Fregment();
         }
@@ -29,6 +31,6 @@ public class FragementAdapter extends FragmentStateAdapter{
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

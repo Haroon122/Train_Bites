@@ -41,6 +41,9 @@ public class Delivery_Bottom_Activity extends AppCompatActivity {
                 } else if (itmId == R.id.shipordersDelivery) {
                     viewPager2.setCurrentItem(1);
                     return true;
+                } else if (itmId==R.id.ridersProfile) {
+                    viewPager2.setCurrentItem(2);
+                    return true;
                 }
                 return false;
             }
@@ -55,6 +58,9 @@ public class Delivery_Bottom_Activity extends AppCompatActivity {
                         break;
                     case 1:
                         bottomNavigationView.setSelectedItemId(R.id.shipordersDelivery);
+                        break;
+                    case 2:
+                        bottomNavigationView.setSelectedItemId(R.id.ridersProfile);
                         break;
                 }
 

@@ -23,6 +23,11 @@
         android:id="@+id/chefProfile"
         android:icon="@drawable/ic_dish_spoon_knife"
         android:title="Post Dish" />
+    <item
+        android:id="@+id/ChefprofileID"
+        android:icon="@drawable/customer_profile"
+        android:title="Profile"/>
+
 
 
 

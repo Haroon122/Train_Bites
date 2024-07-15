@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerFoodPanel.ConfirmOrderForSingleScreen">
+
+    <ImageView
+        android:id="@+id/top_img"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top_background" />
+
+    <TextView
+        android:id="@+id/detailtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="User Detail"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/green">
+
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userdetail"
+        android:layout_below="@id/detailtext"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="15dp">
+
+
+
+        <EditText
+            android:id="@+id/usernameid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:hint="Enter Name"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/userphoneid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:hint="Enter Phone Number"
+            android:inputType="phone"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/userSeatid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:hint="Enter Seat or Bearth Number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/userCoachid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:hint="Enter Coach Number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/totalAmountId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:text="Total Amount"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/Getdishname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:text="Dish Name"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/user_detail_background">
+
+        </TextView>
+
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_background"
+            android:gravity="center"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="5dp">
+        </Button>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

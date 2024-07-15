@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ChefFoodPanel.Chef_profileID_fregment">
+
+
+    <ImageView
+        android:id="@+id/top_img"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top_background" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chef Profile"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp">
+
+    </TextView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Chefcard"
+        android:layout_width="match_parent"
+        android:layout_height="575dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="10dp"
+        android:foreground="@drawable/card_border"
+        app:cardCornerRadius="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="50dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <ImageButton
+                android:id="@+id/Chefchangeprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
+                android:src="@drawable/userimage">
+
+            </ImageButton>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="245dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <ImageButton
+                android:id="@+id/ChefProfileLogoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn">
+
+            </ImageButton>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="130dp"
+            app:cardCornerRadius="120dp"
+            >
+
+            <ImageView
+                android:id="@+id/ChefImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:foreground="@drawable/user_image_bg"
+                >
+
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <EditText
+            android:id="@+id/ChefnameId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@android:color/transparent"
+            android:text="Chef Name"
+            android:textColor="@color/green"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:inputType="text"
+            android:textStyle="bold">
+
+        </EditText>
+
+
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="280dp"
+            android:text="E-Mail Address"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/ChefEmailEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="310dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:textColor="#36474F"
+            android:drawableLeft="@drawable/email_icon"
+            android:background="@drawable/user_profile_edittext_bg">
+
+        </EditText>
+
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="355dp"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/ChefPasswordEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="385dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#36474F"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/password_icon"
+            android:background="@drawable/user_profile_edittext_bg">
+
+        </EditText>
+
+
+        <ImageButton
+            android:id="@+id/eyeToggleBtn"
+            android:layout_below="@id/pasword"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hide"
+            android:layout_marginTop="393dp"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="300dp">
+
+        </ImageButton>
+
+        <TextView
+            android:id="@+id/phoneTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="430dp"
+            android:text="Phone "
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/ChefPhoneEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="460dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#36474F"
+            android:inputType="phone"
+            android:drawableLeft="@drawable/phone_icon"
+            android:background="@drawable/user_profile_edittext_bg"
+            android:maxLength="11">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/ChefProfileEditBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_background"
+            android:layout_marginTop="515dp">
+
+        </Button>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

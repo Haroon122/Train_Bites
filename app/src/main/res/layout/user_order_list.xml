@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        app:cardElevation="5dp">
+
+        <TextView
+            android:id="@+id/dateTextid"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="Date:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/Dateid"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="2024-11-05 14:35:20"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="60dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/paid_OR_unpaid_id"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="unpaid"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="300dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/order_no_text"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Order No:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="1730877965463"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="85dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/name_id"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="name text"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="85dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/seat_no_text"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Seat No:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/seat_id"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="99B"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="85dp">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/coach_no_text"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Coach No:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/coach_id"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="99B"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="85dp">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/Amount_text"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Amount:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="160dp"
+            android:layout_marginStart="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/Amouunt_id"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="160dp"
+            android:layout_marginStart="85dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/items_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Multiple Items"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp">
+
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/delete_order_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete_icon"
+            android:layout_marginTop="145dp"
+            android:layout_marginStart="320dp"
+            android:background="@android:color/transparent">
+
+        </ImageButton>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

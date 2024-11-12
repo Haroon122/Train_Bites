@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_margin="2dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/confirm_Order_Anim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:lottie_rawRes="@raw/confirm_order_animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <TextView
+                android:id="@+id/success_order_Id"
+                android:layout_below="@id/confirm_Order_Anim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Order!"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:textAlignment="center">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/order_Id"
+                android:layout_below="@id/success_order_Id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Your Order placed successfully"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textAlignment="center">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/check_order_id"
+                android:layout_below="@id/order_Id"
+                android:background="@drawable/btn_background"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="180dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="Check Order">
+            </Button>
+
+            <Button
+                android:id="@+id/back_to_home_id"
+                android:layout_below="@id/order_Id"
+                android:background="@drawable/btn_background"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="Back to Home">
+            </Button>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</RelativeLayout>

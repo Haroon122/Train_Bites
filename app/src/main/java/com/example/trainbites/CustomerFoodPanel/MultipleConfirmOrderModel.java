@@ -7,14 +7,58 @@ public class MultipleConfirmOrderModel {
     String Ucoach;
     String Udish;
     String Utotal;
+    String orderDate;
+    String orderNumber;
+    String paymentstatus;
+    String SingleItemOrMultipleItem;
 
-    public MultipleConfirmOrderModel(String uname, String uphone, String useat, String ucoach, String udish, String utotal) {
+    public MultipleConfirmOrderModel(){
+
+    }
+
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public String getPaymentstatus() {
+        return paymentstatus;
+    }
+
+    public void setPaymentstatus(String paymentstatus) {
+        this.paymentstatus = paymentstatus;
+    }
+
+    public String getSingleItemOrMultipleItem() {
+        return SingleItemOrMultipleItem;
+    }
+
+    public void setSingleItemOrMultipleItem(String singleItemOrMultipleItem) {
+        SingleItemOrMultipleItem = singleItemOrMultipleItem;
+    }
+    public MultipleConfirmOrderModel(String uname, String uphone, String useat, String ucoach, String udish, String utotal, String orderdate, String ordernumber, String singleItemOrMultipleItem, String paymentstatus) {
         Uname = uname;
         Uphone = uphone;
         Useat = useat;
         Ucoach = ucoach;
         Udish = udish;
         Utotal = utotal;
+        orderDate = orderdate;
+        orderNumber = ordernumber;
+        this.paymentstatus = paymentstatus;
+        this.SingleItemOrMultipleItem = singleItemOrMultipleItem;
     }
 
     public String getUname() {

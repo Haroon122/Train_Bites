@@ -70,5 +70,24 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation ("com.vanniktech:android-image-cropper:4.5.0")
 
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
+
+
+    // Stripe dependencies
+    implementation ("com.stripe:stripe-java:26.0.0")
+    implementation ("com.stripe:stripe-android:20.20.0")
+
+    // Volley for network operations
+    implementation ("com.android.volley:volley:1.2.0")
+
+    // Lifecycle and Startup dependencies
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation ("androidx.startup:startup-runtime:1.1.1")
+
+    // Multidex
+    implementation ("androidx.multidex:multidex:2.0.1")
+
 
 }

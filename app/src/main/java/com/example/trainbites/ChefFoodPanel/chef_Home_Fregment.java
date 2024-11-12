@@ -83,6 +83,7 @@ public class chef_Home_Fregment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     chefProjectModel chefProjectModel = dataSnapshot.getValue(chefProjectModel.class);
                     if (chefProjectModel != null) {
+                        chefProjectModel.setKey(dataSnapshot.getKey()); // Set the key
                         recycleList.add(chefProjectModel);
                     } else {
                         Log.e(TAG, "chefProjectModel is null for dataSnapshot: " + dataSnapshot.getKey());

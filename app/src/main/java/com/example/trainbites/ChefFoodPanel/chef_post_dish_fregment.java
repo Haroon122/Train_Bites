@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.example.trainbites.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -128,6 +129,10 @@ public class chef_post_dish_fregment extends Fragment {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+                    // Generate a unique key using push()
+                    DatabaseReference productRef = database.getReference().child("product").push();
+                    String uniqueKey = productRef.getKey();
                     @Override
                     public void onSuccess(Uri uri) {
                         chefProjectModel chefModel = new chefProjectModel();
@@ -136,6 +141,7 @@ public class chef_post_dish_fregment extends Fragment {
                         chefModel.setDescription(Description.getText().toString());
                         chefModel.setQuantity(Quantity.getText().toString());
                         chefModel.setPrice(Price.getText().toString());
+                        chefModel.setKey(uniqueKey); // Set the unique key in the model
 
                         database.getReference().child("product").push().setValue(chefModel)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -205,6 +211,4 @@ public class chef_post_dish_fregment extends Fragment {
             ViewImage.setImageURI(ImageUri);
         }
     }
-
-
 }

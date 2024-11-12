@@ -1,18 +1,18 @@
 package com.example.trainbites.ChefFoodPanel;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.trainbites.CustomerFoodPanel.DataRecieveFromCustomerActivity;
 import com.example.trainbites.R;
 import com.squareup.picasso.Picasso;
 
@@ -38,26 +38,28 @@ public class UpdateItemsAdapter extends RecyclerView.Adapter<UpdateItemsAdapter.
     public void onBindViewHolder(@NonNull UpdateItemsAdapter.ViewHolder holder, int position) {
         chefProjectModel model = list.get(position);
 
-        // for image
+        // Load image using Picasso
         Picasso.get().load(model.getPostImage()).placeholder(R.drawable.loadingcircle).into(holder.postImage);
 
-        // for text
+        // Set text views
         holder.UploadDishName.setText(model.getDishName());
         holder.UploadDescription.setText(model.getDescription());
         holder.UploadQuantity.setText(model.getQuantity());
         holder.UploadPrice.setText(model.getPrice());
 
-        //click on recyclerview items
+        // Handle item click
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, ChefUpdateItemsActivity.class);
-                intent.putExtra("ChefItemKey",model.getKey());
-                intent.putExtra("Cheforderdishname",model.getDishName());
-                intent.putExtra("ChefOrderPrice",model.getPrice());
-                intent.putExtra("ChefloadImageforOrder",model.getPostImage());
-                intent.putExtra("ChefOrderdiscription",model.getDescription());
-                intent.putExtra("ChefItemQuantity",model.getQuantity());
+                Intent intent = new Intent(context, ChefUpdateItemsActivity.class);
+                String itemkey=model.getKey();
+                Log.d("PreviousActivity", "Sending ItemKey: " + itemkey);  // Log the key being sent
+                intent.putExtra("ItemKey",itemkey);
+                intent.putExtra("Cheforderdishname", model.getDishName());
+                intent.putExtra("ChefOrderPrice", model.getPrice());
+                intent.putExtra("ChefloadImageforOrder", model.getPostImage());
+                intent.putExtra("ChefOrderdiscription", model.getDescription());
+                intent.putExtra("ChefItemQuantity", model.getQuantity());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
@@ -73,7 +75,6 @@ public class UpdateItemsAdapter extends RecyclerView.Adapter<UpdateItemsAdapter.
         TextView UploadDishName, UploadDescription, UploadQuantity, UploadPrice;
         ImageView postImage;
 
-        @SuppressLint("WrongViewCast")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

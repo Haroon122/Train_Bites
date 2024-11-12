@@ -35,14 +35,6 @@ public class Customer_Bottom_Activity extends AppCompatActivity {
         bottomNavigationView=findViewById(R.id.BottomNavigationBarCustomer);
         viewPager2=findViewById(R.id.viewpagerCustomer);
 
-
-        /*
-        // Initialize badge for cart menu item
-        badge=bottomNavigationView.getOrCreateBadge(R.id.cart);
-        badge.setVisible(false);
-        badge.setNumber(0);*/
-
-
         FragementAdapter adapter=new FragementAdapter(this);
         viewPager2.setAdapter(adapter);
 
@@ -116,17 +108,5 @@ public class Customer_Bottom_Activity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
-    /*
-    // Method to update badge count
-    public void updateBadgeCount(int count){
-        if (count>0){
-            badge.setVisible(true);
-            badge.setNumber(count);
-        }else {
-            badge.setVisible(false);
-        }
-    }*/
-
 
 }

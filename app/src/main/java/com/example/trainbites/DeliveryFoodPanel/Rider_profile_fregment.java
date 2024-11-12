@@ -54,10 +54,10 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class Rider_profile_fregment extends Fragment {
     private static final String TAG = "RiderProfileFregment";
-    ImageButton riderLogoutBtn,riderChangeProfileBtn,eyeBtn;
-    Button riderEbitBtn;
+    ImageButton eyeBtn;
+    Button riderEbitBtn,logoutBtn;
     EditText riderEmail,riderPhone,riderPassword,riderUserName;
-    ImageView riderProfileView;
+    ImageView riderProfileView,RiderAddImageBtn;
     String currentImageurl;
     Uri RiderImageUri;
     FirebaseUser currentRider;
@@ -84,8 +84,8 @@ public class Rider_profile_fregment extends Fragment {
         riderPhone=view.findViewById(R.id.RiderPhoneEdittext);
         riderEmail=view.findViewById(R.id.RiderEmailEdittext);
         riderUserName=view.findViewById(R.id.RidernameId);
-        riderLogoutBtn=view.findViewById(R.id.RiderProfileLogoutBtn);
-        riderChangeProfileBtn=view.findViewById(R.id.Riderchangeprofile);
+        logoutBtn=view.findViewById(R.id.RiderLogoutBtn);
+        RiderAddImageBtn=view.findViewById(R.id.AddRiderImageid);
         riderEbitBtn=view.findViewById(R.id.RiderProfileEditBtn);
         riderProfileView=view.findViewById(R.id.RiderImageView);
         eyeBtn=view.findViewById(R.id.eyeToggleBtn);
@@ -136,7 +136,7 @@ public class Rider_profile_fregment extends Fragment {
 
 
         //logout button working
-        riderLogoutBtn.setOnClickListener(new View.OnClickListener() {
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(getContext())
@@ -161,7 +161,7 @@ public class Rider_profile_fregment extends Fragment {
 
 
         //select image from gallery button
-        riderChangeProfileBtn.setOnClickListener(new View.OnClickListener() {
+        RiderAddImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showConfirmDialog();

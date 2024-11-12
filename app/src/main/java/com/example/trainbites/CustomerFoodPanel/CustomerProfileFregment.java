@@ -53,17 +53,17 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class CustomerProfileFregment extends Fragment {
     private static final String TAG = "CustomerProfileFregment";
-    ImageButton changeprofileBtn,logoutBtn,eyeBtn;
+    ImageButton eyeBtn;
     private FirebaseStorage storage;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private Uri UserImageUri;
     private FirebaseDatabase database;
-    private ImageView imageView;
+    private ImageView imageView,userAddImage;
     private String currentImageUrl;
     EditText email, password, phone, username;
     ProgressDialog progressDialog1,progressDialog2;
-    Button editBtn;
+    Button editBtn,logoutBtn;
     private boolean isPasswordVisible=false;
 
     @SuppressLint("MissingInflatedId")
@@ -80,8 +80,8 @@ public class CustomerProfileFregment extends Fragment {
         username=view.findViewById(R.id.userNAmeId);
         imageView = view.findViewById(R.id.userImageView);
         eyeBtn=view.findViewById(R.id.eyeToggleBtn);
-        changeprofileBtn = view.findViewById(R.id.userchangeprofile);
-        logoutBtn=view.findViewById(R.id.userProfileLogoutBtn);
+        userAddImage = view.findViewById(R.id.userAddImageBtn);
+        logoutBtn=view.findViewById(R.id.LogoutCustomerId);
         editBtn=view.findViewById(R.id.EditUserProfileId);
 
         //database inilization
@@ -110,7 +110,7 @@ public class CustomerProfileFregment extends Fragment {
         }
 
         // Change profile image button
-        changeprofileBtn.setOnClickListener(new View.OnClickListener() {
+        userAddImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showConfirmDialog();

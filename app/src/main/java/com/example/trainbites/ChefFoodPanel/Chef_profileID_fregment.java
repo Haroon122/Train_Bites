@@ -52,17 +52,17 @@ import com.karumi.dexter.listener.single.PermissionListener;
 public class Chef_profileID_fregment extends Fragment {
 
     private static final String TAG = "ChefProfileFregment";
-    ImageButton changeprofileBtn,logoutBtn,eyeBtn;
+    ImageButton eyeBtn;
     FirebaseStorage storage;
     FirebaseAuth mAuth;
     FirebaseUser currentChef;
     Uri ChefImageUri;
     FirebaseDatabase database;
-    ImageView imageView;
+    ImageView imageView,chefImageBtn;
     String currentImageUrl;
     EditText Chefmail, ChefPassword, ChefPhone,Chefname;
     ProgressDialog progressDialog1,progressDialog2;
-    Button editBtn;
+    Button editBtn,logoutBtn;
     private boolean isPasswordVisible=false;
 
 
@@ -74,8 +74,8 @@ public class Chef_profileID_fregment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_chef_profile_i_d_fregment, container, false);
 
         //inilization
-        changeprofileBtn=view.findViewById(R.id.Chefchangeprofile);
-        logoutBtn=view.findViewById(R.id.ChefProfileLogoutBtn);
+        chefImageBtn=view.findViewById(R.id.chefImageBtn);
+        logoutBtn=view.findViewById(R.id.CheflogoutBtn);
         eyeBtn=view.findViewById(R.id.eyeToggleBtn);
         editBtn=view.findViewById(R.id.ChefProfileEditBtn);
         Chefmail=view.findViewById(R.id.ChefEmailEdittext);
@@ -153,7 +153,7 @@ public class Chef_profileID_fregment extends Fragment {
 
 
         //select image from gallery button
-        changeprofileBtn.setOnClickListener(new View.OnClickListener() {
+        chefImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showConfirmDialog();

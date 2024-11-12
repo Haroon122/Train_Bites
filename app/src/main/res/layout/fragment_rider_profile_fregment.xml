@@ -39,46 +39,10 @@
         android:foreground="@drawable/card_border"
         app:cardCornerRadius="20dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="180dp"
-            android:layout_marginStart="50dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <ImageButton
-                android:id="@+id/Riderchangeprofile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:background="@android:color/transparent"
-                android:src="@drawable/userimage">
-
-            </ImageButton>
-
-        </androidx.cardview.widget.CardView>
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="180dp"
-            android:layout_marginStart="245dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
 
-            <ImageButton
-                android:id="@+id/RiderProfileLogoutBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:src="@drawable/btn">
 
-            </ImageButton>
-
-        </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
@@ -99,6 +63,25 @@
 
             </ImageView>
 
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="100dp"
+            android:background="@drawable/rider_add_image_cardview_bg"
+            android:layout_marginTop="95dp"
+            android:layout_marginStart="220dp">
+
+            <ImageView
+                android:id="@+id/AddRiderImageid"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/plus_icon"
+
+                >
+            </ImageView>
         </androidx.cardview.widget.CardView>
 
 
@@ -126,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="200dp"
             android:text="E-Mail Address"
             android:textStyle="bold"
             android:textColor="@color/green"
@@ -138,7 +121,7 @@
             android:id="@+id/RiderEmailEdittext"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="230dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:paddingStart="10dp"
@@ -157,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="355dp"
+            android:layout_marginTop="275dp"
             android:text="Password"
             android:textStyle="bold"
             android:textColor="@color/green"
@@ -169,7 +152,7 @@
             android:id="@+id/RiderPasswordEdittext"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="385dp"
+            android:layout_marginTop="305dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:paddingStart="10dp"
@@ -188,7 +171,7 @@
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:src="@drawable/hide"
-            android:layout_marginTop="393dp"
+            android:layout_marginTop="313dp"
             android:background="@android:color/transparent"
             android:layout_marginStart="300dp">
 
@@ -199,7 +182,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="430dp"
+            android:layout_marginTop="350dp"
             android:text="Phone "
             android:textStyle="bold"
             android:textColor="@color/green"
@@ -211,7 +194,7 @@
             android:id="@+id/RiderPhoneEdittext"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="460dp"
+            android:layout_marginTop="380dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:paddingStart="10dp"
@@ -234,7 +217,21 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_background"
-            android:layout_marginTop="515dp">
+            android:layout_marginTop="445dp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/RiderLogoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Log Out"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_background"
+            android:layout_marginTop="500dp">
 
         </Button>
 

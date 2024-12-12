@@ -27,7 +27,7 @@ public class CustomerOrderFragmentAdapter extends RecyclerView.Adapter<CustomerO
 
     private List<Object> orders; // List of objects that can hold either model
 
-    private Context context;
+    //private Context context;
     public CustomerOrderFragmentAdapter(List<Object> orders) {
         this.orders = orders;
         if (orders == null || orders.isEmpty()) {
@@ -114,82 +114,6 @@ public class CustomerOrderFragmentAdapter extends RecyclerView.Adapter<CustomerO
         }
     }
 
-   /* private void deleteOrderFromDatabase(String orderNumber, int position) {
-        if (orders == null || orders.isEmpty()) {
-            Log.e("Firebase", "Order list is empty, cannot remove.");
-            return;
-        }
-
-        if (position < 0 || position >= orders.size()) {
-            Log.e("Firebase", "Invalid position: " + position);
-            return;
-        }
-
-        DatabaseReference singleOrderReference = FirebaseDatabase.getInstance().getReference("Single_Confirm_order");
-        DatabaseReference multipleOrderReference = FirebaseDatabase.getInstance().getReference("Multiple_Confirm_order");
-
-        Query singleOrderQuery = singleOrderReference.orderByChild("orderNumber").equalTo(orderNumber);
-        Query multipleOrderQuery = multipleOrderReference.orderByChild("orderNumber").equalTo(orderNumber);
-
-        singleOrderQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        snapshot.getRef().removeValue()
-                                .addOnSuccessListener(aVoid -> {
-                                    // Remove from list after successful Firebase deletion
-                                    if (orders != null && !orders.isEmpty() && position < orders.size()) {
-                                        orders.remove(position); // Ensure the position is valid
-                                        notifyItemRemoved(position);
-                                    } else {
-                                        Log.e("Firebase", "Invalid position for order removal.");
-                                    }
-                                })
-                                .addOnFailureListener(e -> {
-                                    Log.e("Firebase", "Failed to delete order from Single_Confirm_order", e);
-                                });
-                    }
-                } else {
-                    Log.e("Firebase", "No matching single order found for orderNumber: " + orderNumber);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("Firebase", "Error deleting single order: " + databaseError.getMessage());
-            }
-        });
-
-        multipleOrderQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        snapshot.getRef().removeValue()
-                                .addOnSuccessListener(aVoid -> {
-                                    if (orders != null && !orders.isEmpty() && position < orders.size()) {
-                                        orders.remove(position);
-                                        notifyItemRemoved(position);
-                                    } else {
-                                        Log.e("Firebase", "Invalid position for order removal.");
-                                    }
-                                })
-                                .addOnFailureListener(e -> {
-                                    Log.e("Firebase", "Failed to delete order from Multiple_Confirm_order", e);
-                                });
-                    }
-                } else {
-                    Log.e("Firebase", "No matching multiple order found for orderNumber: " + orderNumber);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("Firebase", "Error deleting multiple order: " + databaseError.getMessage());
-            }
-        });
-    }*/
    private void deleteOrderFromDatabase(Context context, String orderNumber, int position) {
        if (context == null) {
            Log.e("CustomerOrderAdapter", "Context is null, cannot show AlertDialog.");

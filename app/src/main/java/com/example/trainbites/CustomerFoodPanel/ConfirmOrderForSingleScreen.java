@@ -3,7 +3,6 @@ package com.example.trainbites.CustomerFoodPanel;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.trainbites.ChefFoodPanel.ChefPendingSingleOrderModel;
 import com.example.trainbites.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,7 +42,7 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
     EditText name, phone, seat, coach;
     TextView totalAmount, dishName;
     Button nxt;
-    DatabaseReference dbRefrence;
+    DatabaseReference dbRefrence,dbRefrence_for_chef;
     ProgressDialog progressDialog;
 
     // Stripe variables
@@ -68,6 +69,7 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
         dishName = findViewById(R.id.Getdishname);
         progressDialog = new ProgressDialog(this);
         dbRefrence = FirebaseDatabase.getInstance().getReference("Single_Confirm_order");
+        dbRefrence_for_chef=FirebaseDatabase.getInstance().getReference("Pending_order_chef_db_singleOrder");
 
         // Initialize Stripe
         PaymentConfiguration.init(this, publishableKey);
@@ -258,6 +260,46 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
 
                     }
                 });
+
+                String orderID=dbRefrence_for_chef.push().getKey();
+                if (orderID != null){
+                    ChefPendingSingleOrderModel chefOrder=new ChefPendingSingleOrderModel(Uname, Uphone, Useat, Ucoach, UtotalAmount, Udish,currentDateTime, uniqueOrderId,paymentstatus,SingleItemOrMultipleItem );
+
+                    dbRefrence_for_chef.child(orderID).setValue(chefOrder).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                        }
+                    });
+
+                }
+/*
+                //this data store in pending chef order firebase database
+                String orderid=dbRefrence_for_chef.push().getKey();
+                if (orderid !=null){
+                    ConfirmOrderForSingleScreen_Model myorder = new ConfirmOrderForSingleScreen_Model(Uname, Uphone, Useat, Ucoach, UtotalAmount, Udish,currentDateTime, uniqueOrderId,paymentstatus,SingleItemOrMultipleItem );
+                    dbRefrence_for_chef.child(orderid).setValue(myorder).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                        }
+                    });
+
+                }*/
             }
 
     }
@@ -270,11 +312,8 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
         BkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //dialog.dismiss();
+                dialog.dismiss();
 
-                Intent intent = new Intent(ConfirmOrderForSingleScreen.this,Customer_Bottom_Activity.class);
-                startActivity(intent);
-                finish();
             }
         });
 
@@ -283,9 +322,8 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
         chkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConfirmOrderForSingleScreen.this,Customer_Bottom_Activity.class);
-                startActivity(intent);
-                finish();
+                dialog.dismiss();
+
             }
         });
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -293,5 +331,3 @@ public class ConfirmOrderForSingleScreen extends AppCompatActivity {
 
     }
 }
-
-

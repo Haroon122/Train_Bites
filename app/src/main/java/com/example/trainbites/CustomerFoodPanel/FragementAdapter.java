@@ -30,7 +30,7 @@ public class FragementAdapter extends FragmentStateAdapter{
             case 4:
                 return new CustomerProfileFregment();
             default:
-                return new chef_Home_Fregment();
+                return new CustomerHomeFregment();
         }
     }
 

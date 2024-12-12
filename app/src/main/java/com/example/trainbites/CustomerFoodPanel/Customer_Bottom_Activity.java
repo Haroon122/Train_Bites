@@ -2,6 +2,7 @@ package com.example.trainbites.CustomerFoodPanel;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -37,7 +38,6 @@ public class Customer_Bottom_Activity extends AppCompatActivity {
 
         FragementAdapter adapter=new FragementAdapter(this);
         viewPager2.setAdapter(adapter);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

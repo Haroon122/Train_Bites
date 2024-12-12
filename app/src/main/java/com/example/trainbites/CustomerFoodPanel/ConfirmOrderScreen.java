@@ -24,9 +24,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.trainbites.ChefFoodPanel.ChefPendingMultipleOrderModel;
 import com.example.trainbites.MainActivity;
 import com.example.trainbites.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -51,7 +53,7 @@ public class ConfirmOrderScreen extends AppCompatActivity {
     private Button nxt;
     private ArrayList<CartItemModel> cartItems;
 
-    private DatabaseReference dbReference;
+    private DatabaseReference dbReference,dbRefrence_for_chef;
     private ProgressDialog progressDialog;
 
     // Stripe variables
@@ -81,6 +83,7 @@ public class ConfirmOrderScreen extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         dbReference = FirebaseDatabase.getInstance().getReference("Multiple_Confirm_order");
+        dbRefrence_for_chef=FirebaseDatabase.getInstance().getReference("Pending_order_chef_db_MultiOrder");
 
         // Get total amount and cart items
         double totalAmountValue = getIntent().getDoubleExtra("Total Amount", 0.0);
@@ -285,6 +288,29 @@ public class ConfirmOrderScreen extends AppCompatActivity {
 
                 }
             });
+
+            //this data store in pending chef order firebase database
+
+
+
+            String MId=dbRefrence_for_chef.push().getKey();
+            if (MId != null){
+                ChefPendingMultipleOrderModel MultiOrder=new ChefPendingMultipleOrderModel(Uname, Uphone, Useat, Ucoach, Utotal, Udish,currentDateTime, uniqueOrderId,paymentstatus);
+                dbRefrence_for_chef.child(MId).setValue(MultiOrder).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+            }
+
         }
     }
 
@@ -307,6 +333,17 @@ public class ConfirmOrderScreen extends AppCompatActivity {
 
             }
         });
+
+        //move to checking order
+        Button chkBtn=dialog.findViewById(R.id.check_order_id);
+        chkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
+
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.show();
     }
